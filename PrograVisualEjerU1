@@ -1,0 +1,25 @@
+
+class persona:
+    nombre="default"
+    edad=0
+    dni="default"
+
+    def __init__(self,nombre,edad,dni):
+        self.nombre=nombre
+        self.edad=edad
+        self.dni=dni
+    
+    def EsMayorDeEdad(self):
+        if self.edad>18:
+            return True
+        else:
+            return False
+    
+    def mostrar(self):
+        print("el nombre de la persona es:",constructor.nombre)
+        print("La edad de la persona es:",constructor.edad)
+        print("el DNI de la persona es:",constructor.dni)
+        print(constructor.EsMayorDeEdad())
+
+constructor=persona("sebastian",19,"SCL1896")
+constructor.mostrar()
