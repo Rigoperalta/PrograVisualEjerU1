@@ -1,0 +1,50 @@
+# Venta de animmales 
+
+#Clase padre
+from http import client
+
+
+class animal:
+    def __init__(self,descripcion,animal,color):
+        self.descripcion = descripcion
+        self.animal = animal
+        self.color = color
+
+    def ejemplar(self): # Se utilizara en el polimorfismo
+        print("Es un bonito ejemplar")
+
+ 
+class ave(animal): # HERENCIA EN PYTHON
+    
+    def __init__(self,descripcion,animal,color,valorave):
+        super().__init__(descripcion,animal,color)
+        self.valorave= valorave
+        
+
+    def presentarave(self):
+        print(f"Haz adquirido un pez {self.descripcion}, es un {self.animal}, es de color {self.color} y tiene un valor de {self.valorave} ")
+
+
+class pez(animal): # HERENCIA EN PYTHON
+    
+    def __init__(self,descripcion,animal,color,valorpez):
+        super().__init__(descripcion,animal,color)
+        self.valorpez= valorpez
+
+
+    def presentarpez(self):
+        print(f"Haz adquirido un pez {self.descripcion}, es un {self.animal}, es de color {self.color} y tiene un valor de {self.valorpez} ")
+ 
+
+COMPRA=int(input('BIENVENIDO A LA TIENDA DESEAS COMPRAR UN PEZ TECLEA UN 1_________SI DESEAS COMPRAR UN AVE TECLEA UN 2.......' ))
+
+if COMPRA== 1:
+    cliente=pez("tamaño pequeño","pez beta","azul", 120)
+    cliente.presentarpez()
+   
+
+elif COMPRA== 2:
+    cliente=ave("que puede aprender a hablar","Loro","verde", 2800)
+    cliente.presentarave()
+else:
+    print("NO TENEMOS LO QUE BUSCAS")
